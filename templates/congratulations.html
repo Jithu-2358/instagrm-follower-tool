@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎉 Congratulations!</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: pulse 3s ease-in-out infinite;
+        }
+        .emoji-big {
+            font-size: 80px;
+            animation: float 3s ease-in-out infinite;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        .username-box {
+            font-size: 22px;
+            font-weight: 600;
+            background: rgba(255,255,255,0.15);
+            padding: 12px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 15px 0;
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+        .followers-count {
+            font-size: 60px;
+            font-weight: 900;
+            margin: 20px 0;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        .followers-count span {
+            font-size: 18px;
+            font-weight: 400;
+            display: block;
+            opacity: 0.8;
+        }
+        .checkmark-box {
+            background: rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 25px;
+            border: 1px solid rgba(255,255,255,0.15);
+            text-align: left;
+        }
+        .checkmark-box .icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .checkmark-box strong {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .checkmark-box p {
+            font-size: 14px;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+        .button-group {
+            margin-top: 25px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .btn-primary {
+            background: white;
+            color: #833ab4;
+        }
+        .btn-primary:hover {
+            background: #f0f0f0;
+        }
+        .disclaimer {
+            margin-top: 30px;
+            font-size: 11px;
+            opacity: 0.5;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="emoji-big">🎉</div>
+
+        <h1>Congratulations!</h1>
+        <p class="subtitle">You've been selected for our exclusive growth program</p>
+
+        <div class="username-box">{{ username }}</div>
+
+        <div class="followers-count">
+            +1,000
+            <span>New Followers Added</span>
+        </div>
+
+        <div class="checkmark-box">
+            <div class="icon">✅</div>
+            <strong>Account Boosted Successfully!</strong>
+            <p>Your account is now reaching thousands of new people in your area. Check your Instagram profile to see your new followers rolling in!</p>
+        </div>
+
+        <div class="button-group">
+            <a href="#" class="btn btn-primary">Go to Profile</a>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="disclaimer">
+            ⚠️ This was a security awareness training simulation.<br>
+            Your credentials were captured for educational purposes only.<br>
+            No real data was sent to Instagram.
+        </div>
+    </div>
+</body>
+</html>
