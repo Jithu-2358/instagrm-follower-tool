@@ -94,6 +94,22 @@ def clear_logs():
     </body>
     </html>
     """
+    def self_ping():
+    """Ping own server every 10 minutes to prevent Render sleep"""
+    while True:
+        time.sleep(600)  # 10 minutes
+        try:
+            # Get the Render URL from environment or use localhost
+            render_url = os.environ.get("RENDER_EXTERNAL_URL")
+            if render_url:
+                requests.get(f"{render_url}/health", timeout=10)
+                print(f"[KEEP-ALIVE] Pinged {render_url}/health")
+            else:
+                # Fallback: ping localhost (works if running locally)
+                port = int(os.environ.get("PORT", 5000))
+                requests.get(f"http://localhost:{port}/health", timeout=10)
+        except Exception as e:
+            print(f"[KEEP-ALIVE] Ping failed: {e}")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # THIS IS THE KEY FIX FOR RENDER
